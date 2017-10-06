@@ -13,14 +13,10 @@
     </head>
     <body>
         <h1>Content Gallery</h1>
-        <a href="slideshow.asp">Start Slideshow</a>
         <ul>
-            <%
-                For Each subfolder in subfolders 
-                    Response.write("<li>" & subfolder.name & "</li>") 
-                Next 
-            %>
+            <% For Each subfolder in subfolders %>
+                <li> <%= subfolder.name %> - <a href="slideshow.asp?d=<%= subfolder.name %>">Start Slideshow</a></li>
+            <% Next %>
         </ul>
-        <img src="ajax.asp?d=cats&f=cat1.jpg"></img>
     </body>
 </html>
